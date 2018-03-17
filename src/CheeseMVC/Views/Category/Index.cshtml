@@ -1,4 +1,4 @@
-﻿@model List<CheeseMVC.Models.Cheese>
+﻿@model List<CheeseMVC.Models.CheeseCategory>
 
 <h1>@ViewBag.Title</h1>
 
@@ -6,16 +6,12 @@
 
     <tr>
         <th>Name</th>
-        <th>Description</th>
-        <td>Type</td>
     </tr>
 
     @foreach (var category in Model)
     {
         <tr>
             <td>@category.Name</td>
-            <td>@category.Description</td>
-            <td>@category.Type</td>
         </tr>
     }
 </table>
