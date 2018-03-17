@@ -15,9 +15,12 @@ namespace CheeseMVC.Controllers
         {
             context = dbContext;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+        //From Paticks notes
+        [HttpGet]
+        public IActionResult Index() => View(context.Categories.ToList());
+        //{
+            //View(context.Categories.ToList());
+            //return View();
+       // }
     }
 }
