@@ -19,8 +19,21 @@ namespace CheeseMVC.Controllers
         [HttpGet]
         public IActionResult Index() => View(context.Categories.ToList());
         //{
-            //View(context.Categories.ToList());
-            //return View();
-       // }
+        //View(context.Categories.ToList());
+        //return View();
+        // }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View(new AddCheeseCategoryViewModel());
+        }
+
+        private class AddCheeseCategoryViewModel
+        {
+            public AddCheeseCategoryViewModel()
+            {
+            }
+        }
     }
 }
