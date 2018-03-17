@@ -1,22 +1,19 @@
 ﻿@model List<CheeseMVC.Models.CheeseCategory>
 
-<h1>@ViewBag.Title</h1>
+<h1>Cheese Categories</h1>
+@if (Model.Count > 0)
 
-<table class="table">
+{
+    <ul>
+        @foreach (var category in Model) { 
 
-    <tr>
-        <th>Name</th>
-    </tr>
+            <li>@category.Name</li>
+        }
+    </ul>
 
-    @foreach (var category in Model)
-    {
-        <tr>
-            <td>@category.Name</td>
-        </tr>
-    }
-</table>
+}
 
-@if (Model.Count == 0)
+else
 {
     <p>No categories yet!</p>
 }
