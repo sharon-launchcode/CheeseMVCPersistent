@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CheeseMVC.Data;
+using CheeseMVC.Models;
+using CheeseMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CheeseMVC.Controllers
@@ -26,14 +28,22 @@ namespace CheeseMVC.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return View(new AddCheeseCategoryViewModel());
+            return View(new AddCategoryViewModel());
         }
 
-        private class AddCheeseCategoryViewModel
+        [HttpPost]
+        public IActionResult Add(AddCategoryViewModel newCategoryContainer)
         {
-            public AddCheeseCategoryViewModel()
+            if (!ModelState.IsValid)
+            return View("Add");
+
+            context.Categories.Add(new CheeseCategory
             {
-            }
+                Name = newCategoryContainer.Name
+            });
+            context.SaveChanges();
+            return Redirect("/Category");
         }
+
     }
 }
