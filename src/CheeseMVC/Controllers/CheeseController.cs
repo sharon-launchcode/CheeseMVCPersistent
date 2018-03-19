@@ -9,7 +9,7 @@ namespace CheeseMVC.Controllers
 {
     public class CheeseController : Controller
     {
-        private CheeseDbContext context;
+        private readonly CheeseDbContext context;
 
         public CheeseController(CheeseDbContext dbContext)
         {
@@ -20,8 +20,8 @@ namespace CheeseMVC.Controllers
         public IActionResult Index()
         {
             List<Cheese> cheeses = context.Cheeses.ToList();
-
             return View(cheeses);
+            //return View();
         }
 
         public IActionResult Add()

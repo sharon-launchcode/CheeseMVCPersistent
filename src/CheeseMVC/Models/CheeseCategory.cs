@@ -9,5 +9,7 @@ namespace CheeseMVC.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-    }
+       // public IList<Cheese> Cheeses { get; set; }
+       //It is the above line that is breking it so far
+    }   
 }
