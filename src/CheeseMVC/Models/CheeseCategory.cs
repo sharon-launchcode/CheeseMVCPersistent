@@ -9,7 +9,10 @@ namespace CheeseMVC.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-       // public IList<Cheese> Cheeses { get; set; }
-       //It is the above line that is breking it so far
+        public IList<Cheese> Cheeses { get; set; }
+       //After we set up the Cheese class to work with CheeseCategory
+       //objects, this list will represent the list of all items in a category
+
+
     }   
 }
