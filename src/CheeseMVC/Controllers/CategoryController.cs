@@ -15,7 +15,7 @@ namespace CheeseMVC.Controllers
 
         public CategoryController(CheeseDbContext dbContext)
         {
-            context = dbContext;
+            this.context = dbContext;
         }
         public IActionResult Index()
 
