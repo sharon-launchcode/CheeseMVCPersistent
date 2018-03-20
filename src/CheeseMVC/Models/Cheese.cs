@@ -5,11 +5,8 @@
         public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
         public int CategoryID { get; set; }
-        //CategoryID a one-to-many relationship
-        //The way to do this in a database is through a foreign key
-        //a foreign key column as a way to store the identifier of the object
-        //in a different table in a particlar row it is related to
         public CheeseCategory Category { get; set; }
         //Category is a navigation property within an entifty framework
         //Below from instructions

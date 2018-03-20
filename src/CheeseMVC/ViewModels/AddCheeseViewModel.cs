@@ -28,6 +28,8 @@ namespace CheeseMVC.ViewModels
 
         public AddCheeseViewModel(IEnumerable<CheeseCategory> categories) {
 
+            Categories = categories.ToList();
+
             /*
             CheeseTypes = new List<SelectListItem>();
 
