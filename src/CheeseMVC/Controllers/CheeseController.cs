@@ -93,6 +93,9 @@ namespace CheeseMVC.Controllers
 
         ViewBag.title = "Cheeses in category:" + theCategory.Name;
         return View("Index", theCategory.Cheeses);
+        //the property of Cheeses in the above line for return view
+        //would not have been populated without the .Include
+
         */
     }
 }
