@@ -16,7 +16,7 @@ namespace CheeseMVC.Controllers
         {
             context = dbContext;
         }
-
+        //using predicate of c => c.Category a kind of for each
         // GET: /<controller>/
         public IActionResult Index()
         {
