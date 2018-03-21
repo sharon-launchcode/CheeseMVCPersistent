@@ -73,6 +73,11 @@ namespace CheeseMVC.Controllers
 
             return Redirect("/");
         }
+        //Notes from video
+        //...want to Include the Cheeses List
+        //we saw previously that if I'm querrying for a persistent object
+        //if I want that query to include references to other objects
+        //that are part of that class I need to include them in the query
         /* from minute 20:27 of second video Lesson 12
         public IActionResult Category(int id)
         {
@@ -85,6 +90,9 @@ namespace CheeseMVC.Controllers
                 .Include(cat => cat.Cheeses)
                 .Single(cat => cat.ID == id);
         }
+
+        ViewBag.title = "Cheeses in category:" + theCategory.Name;
+        return View("Index", theCategory.Cheeses);
         */
     }
 }
