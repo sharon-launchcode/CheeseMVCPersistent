@@ -73,5 +73,18 @@ namespace CheeseMVC.Controllers
 
             return Redirect("/");
         }
+        /* from minute 20:27 of second video Lesson 12
+        public IActionResult Category(int id)
+        {
+            if (id == 0)
+            {
+                return Redirect("/Category");
+            }
+
+            CheeseCategory theCategory = context.Categories
+                .Include(cat => cat.Cheeses)
+                .Single(cat => cat.ID == id);
+        }
+        */
     }
 }
