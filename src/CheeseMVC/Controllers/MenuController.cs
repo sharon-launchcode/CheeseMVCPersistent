@@ -23,11 +23,17 @@ namespace CheeseMVC.Controllers
             IList<CheeseMenu> Menus = context.CheeseMenus.ToList();
             return View("Views/Menu/Index.cshtml");
         }
-         /*
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Add()
         {
-            return View();
+            return View(new ViewModels.AddMenuViewModel());
         }
-        */
+        /*
+         * 
+       public IActionResult Index()
+       {
+           return View();
+       }
+       */
     }
 }
