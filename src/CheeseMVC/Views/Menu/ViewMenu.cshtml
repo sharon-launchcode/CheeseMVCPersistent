@@ -8,8 +8,21 @@
 
 <h2>ViewMenu</h2>
 
-@foreach (CheeseMenu item in Model.Items )
+@if (Model.Items.Count() > 0)
+{
     <ul>
-        <li>@item</li>
+    @foreach (CheeseMenu item in Model.Items)
+        //Loop over Model.Items
+        //Model.Items contains CheeseMenu objects
+    {
+            <li>@item.Cheese.Name</li>
+            //Instructions say should look like CheeseMenu.Cheeses.Name
+    }
     </ul>
+}
+else
+{
+    <h3>No menus yet</h3>
 
+}
+<p><a asp-route-id="Model.Menu.ID" asp-controller="Menu">Add Item</a></p>
