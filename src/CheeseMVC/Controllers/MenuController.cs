@@ -19,16 +19,32 @@ namespace CheeseMVC.Controllers
            this.context = dbContext;
         }
 
+        //Get controller 
+       public IActionResult Index()
+       {
+            List<Menu> menus = context.Menus.ToList();
+            return View(menus);
+       }
+        /*
         public IActionResult Index()
         {
             IList<CheeseMenu> Menus = context.CheeseMenus.ToList();
             return View("Views/Menu/Index.cshtml");
         }
+         
         [HttpGet]
         public IActionResult Add()
         {
             return View(new ViewModels.AddMenuViewModel());
         }
+        */
+        public IActionResult Add()
+
+        {
+            AddMenuViewModel addMenuViewModel= new AddMenuViewModel();
+            return View(menus);
+        }
+
         [HttpPost]
         public IActionResult Add(AddMenuViewModel addMenuViewModel)
         {
@@ -87,12 +103,5 @@ namespace CheeseMVC.Controllers
             }
         }
 
-        /*
-         * 
-       public IActionResult Index()
-       {
-           return View();
-       }
-       */
     }
 }
