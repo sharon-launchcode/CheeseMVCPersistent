@@ -1,6 +1,6 @@
 ﻿@model List<CheeseMVC.Models.Cheese>
 
-<h1>@ViewBag.Title</h1>
+@{ ViewBag.Title = "Cheeses";}
 
 <table class="table">
 
@@ -26,3 +26,4 @@
 }
 
 <p><a asp-controller="Cheese" asp-action="Add">Add Cheese Category</a></p>
+<p><a asp-controller="Cheese" asp-action="Remove">Remove Cheese Category</a></p>
