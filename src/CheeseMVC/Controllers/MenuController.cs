@@ -36,7 +36,7 @@ namespace CheeseMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                Menu newMenu = new Menu();
+                Menu newMenu = new Menu()
          
                 {
                     Name = addMenuViewModel.Name
@@ -112,8 +112,8 @@ namespace CheeseMVC.Controllers
                     return Redirect("/Menu/ViewMenu/" + menuItem.MenuID.ToString());
                 }
 
-                return View(addMenuItemViewModel);
             }
+            return View(addMenuItemViewModel);
         }
 
     }
