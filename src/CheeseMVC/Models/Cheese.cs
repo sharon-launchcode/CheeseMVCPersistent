@@ -14,5 +14,7 @@ namespace CheeseMVC.Models
         public List<CheeseMenu> CheeseMenus { get; set; }
         //from video Lesson 13  at 4:04 of 7:30 we should think of this intermediary class
         //CheeseMenus as constituting a relationship between two classes
+        //The intermediary object of Models/Menu.cs is going to play the role
+        //of the join table in the object oriented world
     }
 }
