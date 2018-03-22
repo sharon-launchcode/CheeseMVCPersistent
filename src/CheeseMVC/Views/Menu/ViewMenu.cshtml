@@ -1,0 +1,15 @@
+﻿@model CheeseMVC.ViewModels.ViewMenuViewModel
+@using CheeseMVC.Models
+
+@{
+    //ViewData["Title"] = "ViewMenu";
+    ViewBag.Title = "MENU NAME";
+}
+
+<h2>ViewMenu</h2>
+
+@foreach (CheeseMenu item in Model.Items )
+    <ul>
+        <li>@item</li>
+    </ul>
+
