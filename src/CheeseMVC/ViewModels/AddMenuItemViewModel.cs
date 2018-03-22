@@ -9,8 +9,8 @@ namespace CheeseMVC.ViewModels
 {
     public class AddMenuItemViewModel
     {
-        public int cheeseID { get; set; }
-        public int menuID { get; set; }
+        public int CheeseID { get; set; }
+        public int MenuID { get; set; }
 
         public Menu Menu { get; set; }
         public List<SelectListItem> Cheeses{ get; set; }
@@ -19,16 +19,15 @@ namespace CheeseMVC.ViewModels
 
         public AddMenuItemViewModel (Menu menu, IEnumerable<Cheese> cheeses)
         {
-            Menu = menu;
-            //per instructions initialize Cheeses to an empty list
             Cheeses = new List<SelectListItem>();
-            //copied from instructions
-            Cheeses.Add(new SelectListItem
+            foreach (var cheese in cheeses)
             {
-                Value = cheese.ID.ToString(),
-                Text = cheese.Name
-            });
-        //the lowercase cheese is underlined in red
+                Cheeses.Add(new SelectListItem
+                {
+                    Value = cheese.ID.ToString(),
+                    Text = cheese.Name
+                });
+            }
         }
 
     }
