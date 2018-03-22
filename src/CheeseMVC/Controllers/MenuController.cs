@@ -52,16 +52,15 @@ namespace CheeseMVC.Controllers
 
         [HttpGet]
         public IActionResult ViewMenu(int id)
-        {
-
-            Menu menu = context.Menus.Single(m => m.ID == id);
+        {                  
             List<CheeseMenu> items = context
                 .CheeseMenus
                 .Include(item => item.Cheese)
                 .Where(cm => cm.MenuID == id)
                 .ToList();
+            Menu menu = context.Menus.Single(m => m.ID == id);
 
-            ViewMenuViewModel viewMenuViewModel = new ViewMenuViewModel()
+            ViewMenuViewModel viewModel = new ViewMenuViewModel()
             //use the items and the menu object found above
             //to build a ViewMenuViewModel and passit into the view
             {
@@ -69,7 +68,7 @@ namespace CheeseMVC.Controllers
                 Items = items
             };
 
-            return View(viewMenuViewModel);
+            return View(viewModel);
 
         }
         [HttpGet]
