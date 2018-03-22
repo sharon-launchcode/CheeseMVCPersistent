@@ -15,7 +15,5 @@ namespace CheeseMVC.Models
         public int CheeseID { get; set; }
         public Cheese Cheese { get; set; }
         //Cheese is the Navigation property a reference to CheeseID
-
-        public IList<CheeseMenu> CheeseMenus { get; set; }
     }
 }

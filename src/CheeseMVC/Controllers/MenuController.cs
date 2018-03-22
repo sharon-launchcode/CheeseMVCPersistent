@@ -52,7 +52,11 @@ namespace CheeseMVC.Controllers
 
         [HttpGet]
         public IActionResult ViewMenu(int id)
-        {                  
+        { 
+            // From video Lesson 13 11:52 of 27:20 recall we dont want to retrieve a list of Cheeses 
+            //we want to retrieve of Cheese Menus because
+            //the CheeseMenu objects are what describe
+            //the relationship between the Cheese Class and the Menu Class
             List<CheeseMenu> items = context
                 .CheeseMenus
                 .Include(item => item.Cheese)
