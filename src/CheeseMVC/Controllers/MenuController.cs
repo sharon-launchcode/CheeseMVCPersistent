@@ -19,44 +19,35 @@ namespace CheeseMVC.Controllers
            this.context = dbContext;
         }
 
-        //Get controller 
        public IActionResult Index()
        {
             List<Menu> menus = context.Menus.ToList();
             return View(menus);
        }
-        /*
-        public IActionResult Index()
-        {
-            IList<CheeseMenu> Menus = context.CheeseMenus.ToList();
-            return View("Views/Menu/Index.cshtml");
-        }
-         
-        [HttpGet]
-        public IActionResult Add()
-        {
-            return View(new ViewModels.AddMenuViewModel());
-        }
-        */
-        public IActionResult Add()
 
+        public IActionResult Add()
         {
             AddMenuViewModel addMenuViewModel= new AddMenuViewModel();
-            return View(menus);
+            return View(addMenuViewModel);
         }
 
         [HttpPost]
         public IActionResult Add(AddMenuViewModel addMenuViewModel)
         {
-            if (!ModelState.IsValid)
-                return View("Add");
-            Menu newMenu = new Menu();
-            context.Menus.Add(new Menu
+            if (ModelState.IsValid)
             {
-                Name = addMenuViewModel.Name
-            });
-            context.SaveChanges();
-            return Redirect("/Menu/ViewMenu/" + newMenu.ID);
+                Menu newMenu = new Menu();
+         
+                {
+                    Name = addMenuViewModel.Name
+                };
+                context.Menus.Add(newMenu);
+                context.SaveChanges();
+
+                return Redirect("/Menu");
+                //return Redirect("/Menu/ViewMenu/" + newMenu.ID);
+            }
+            return View(addMenuViewModel);
         }
 
         [HttpGet]
