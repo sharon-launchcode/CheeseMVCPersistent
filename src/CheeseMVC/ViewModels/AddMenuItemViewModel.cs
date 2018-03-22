@@ -28,6 +28,7 @@ namespace CheeseMVC.ViewModels
                     Text = cheese.Name
                 });
             }
+            Menu = menu;
         }
 
     }
