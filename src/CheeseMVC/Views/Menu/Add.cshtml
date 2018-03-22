@@ -1,9 +1,6 @@
 ﻿@model CheeseMVC.ViewModels.AddMenuViewModel
 
-@{ 
-    ViewBag.Title = "New Menu";
-}
-<h1>Add Menu</h1>
+<h1>Add Category</h1>
 
 <form asp-controller="Menu" asp-action="Add" method="post">
 
@@ -13,7 +10,7 @@
         <span asp-validation-for="Name"></span>
     </div>
 
-    <input type="submit" value="Add Menu" />
+    <input type="submit" value="Create Menu" />
 
 </form>
 
