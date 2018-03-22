@@ -70,7 +70,23 @@ namespace CheeseMVC.Controllers
         {
             Menu menu = context.Menus.Single(m => m.ID == id);
         }
-        return View("Add");
+        return View(new AddMenuItemViewModel, menu);
+
+        public IActionResult AddItem(AddMenuItemViewModel addMenuItemViewModel)
+            //instructions AddItem create an instance of AddMenuItemViewModel
+        {
+            //with the given model object
+            if (ModelState.IsValid)
+            {
+                var cheeseID = addMenuItemViewModel.cheeseID;
+                var menuID = addMenuItemViewModel.menuID;
+                //as well as all the list of Cheese Items from the database
+                IList<CheeseMenu> cheesyItems = context.CheeseMenus
+
+
+            }
+        }
+
         /*
          * 
        public IActionResult Index()
