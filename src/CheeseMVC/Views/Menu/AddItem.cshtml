@@ -14,8 +14,8 @@
      
         <span asp-validation-for="CheeseID"></span>
     </div>
-
-    <input type="submit" value="Create Menu" />
+    <input type="hidden" name="menuID" value="@Model.Menu.ID" />
+    <input type="submit" value="Add Item" />
 
 </form>
 
