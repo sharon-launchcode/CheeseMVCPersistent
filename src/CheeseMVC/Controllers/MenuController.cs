@@ -42,6 +42,17 @@ namespace CheeseMVC.Controllers
             context.SaveChanges();
             return Redirect("/Menu/ViewMenu/" + newMenu.ID);
         }
+
+        [HttpGet]
+        public IActionResult ViewMenu(int id)
+        {
+            List<CheeseMenu> items = context
+                .CheeseMenus
+                .Include(item => item.Cheese)
+                .Where(cm => cm.MenuID == id)
+                .ToList();
+                
+        }
         /*
          * 
        public IActionResult Index()
