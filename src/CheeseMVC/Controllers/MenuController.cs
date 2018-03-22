@@ -85,30 +85,7 @@ namespace CheeseMVC.Controllers
         }
 
 
-        public IActionResult AddItem(AddMenuItemViewModel addMenuItemViewModel)
-            //instructions AddItem create an instance of AddMenuItemViewModel
-        {
-            //with the given model object
-            if (ModelState.IsValid)
-            {
-                var cheeseID = addMenuItemViewModel.cheeseID;
-                var menuID = addMenuItemViewModel.menuID;
-                //as well as all the list of Cheese Items from the database
-                IList<CheeseMenu> existingItems = context.CheeseMenus
-                    .Where(cm => cm.CheeseID == cheeseID)
-                    .Where(cm => cm.MenuID == menuID).ToList();
 
-                if (existingItems.Count == 0)
-                {
-                    CheeseMenu menuItem = newCheeseMenu
-                    {
-                        Cheese = context.Cheeses.Single(c => c.ID == CheeseID),
-                        Menu = context.Menus.Single(m => m.ID == menuID)
-                    }
-                }
-
-
-            }
         }
 
     }
