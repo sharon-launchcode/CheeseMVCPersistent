@@ -1,9 +1,7 @@
 ﻿@model CheeseMVC.ViewModels.ViewMenuViewModel
-@using CheeseMVC.Models
 
 @{
-    //ViewData["Title"] = "ViewMenu";
-    ViewBag.Title = "MENU NAME";
+    ViewBag.Title = Model.Menu.Name;
 }
 
 <h2>ViewMenu</h2>
@@ -11,11 +9,11 @@
 @if (Model.Items.Count() > 0)
 {
     <ul>
-    @foreach (CheeseMenu item in Model.Items)
+    @foreach (var cheeseMenu in Model.Items)
         //Loop over Model.Items
         //Model.Items contains CheeseMenu objects
     {
-            <li>@item.Cheese.Name</li>
+            <li>@cheeseMenu.Cheese.Name</li>
             //Instructions say should look like CheeseMenu.Cheeses.Name
     }
     </ul>
@@ -25,4 +23,4 @@ else
     <h3>No menus yet</h3>
 
 }
-<p><a asp-route-id="@Model.Menu.ID" asp-controller="Menu">Add Item</a></p>
+<p><a asp-route-id="@Model.Menu.ID" asp-action="AddItem"  asp-controller="Menu">Add Item</a></p>
